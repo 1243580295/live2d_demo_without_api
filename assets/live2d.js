@@ -3981,18 +3981,11 @@ default = o;
 	}), i.
 default = r;
 	var o = e(2);
-	var requestCache = {};
 	r.prototype.loadBytes = function(t, i) {
-		// Cache 相同的请求，减少请求数量
-		if (requestCache[t] !== undefined) {
-			i(requestCache[t]);
-			return;
-		}
 		var e = new XMLHttpRequest;
 		e.open("GET", t, !0), e.responseType = "arraybuffer", e.onload = function() {
 			switch (e.status) {
 			case 200:
-				requestCache[t] = e.response;
 				i(e.response);
 				break;
 			default:
@@ -4047,7 +4040,7 @@ default = o;
 		l = e(3),
 		$ = r(l);
 	o.prototype = new n.L2DBaseModel, o.prototype.load = function(t, i, e) {
-		this.setUpdating(!0), this.setInitialized(!1), this.modelHomeDir = i.substring(0, i.lastIndexOf("/") + 1), this.modelSetting = new _.
+		this.setUpdating(!0), this.setInitialized(!1), /*this.modelHomeDir = i.substring(0, i.lastIndexOf("/") + 1),*/this.modelHomeDir = '', this.modelSetting = new _.
 	default;
 		var r = this;
 		this.modelSetting.loadModelSetting(i, function() {
