@@ -7,6 +7,7 @@ Live2D 看板娘插件 (https://www.fghrsh.net/post/123.html) 的前端 HTML 源
 
 和原版相比，此版本无需再搭建后端 API (在前端实现模型和材质的更换，一言 API 仍需后端支持)。
 可以直接白嫖 jsdelivr（
+为了写代码的方便，我把模型和材质的id都从0开始了
 
 若需添加新模型，请克隆原后端 API，按照原 API 的方式添加好模型后，将`gene_config_file.py`移动至API的`model`文件夹下并运行。修改`waifu-tips.js`中的`live2d_settings['staticAPIFile']`为生成的`static-api-file.json`目录，并更新`live2d_settings['staticPath']`为`model`文件夹路径，即可正常使用。
 
